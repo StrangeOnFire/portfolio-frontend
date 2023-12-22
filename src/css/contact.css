@@ -21,6 +21,9 @@
     font-size: 2rem;
     text-decoration: none;
 }
+.contact-heading a:hover{
+    text-decoration: underline;
+}
 @media (width<=950px) {
     .contact-heading h1{
        font-size: 3rem;
