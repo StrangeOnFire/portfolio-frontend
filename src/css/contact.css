@@ -1,0 +1,137 @@
+.contact{
+    padding: 1rem;
+}
+
+.contact-heading{
+   display: flex;
+   justify-content: center;
+   align-items: baseline;
+   gap: 1rem;
+}
+.contact-heading h1{
+    font-size: 4rem;
+    margin: 0;
+}
+.contact-heading h2{
+    margin: 0;
+}
+.contact-heading a{
+    color: white;
+    cursor: pointer;
+    font-size: 2rem;
+    text-decoration: none;
+}
+@media (width<=950px) {
+    .contact-heading h1{
+       font-size: 3rem;
+    }
+}
+@media (width<=780px) {
+    .contact-heading{
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+    .contact-heading h1,
+    .contact-heading h2{
+        margin: 0;
+    }
+}
+@media (width<=500px) {
+    .contact-heading a{
+        font-size: 1.5rem;
+    }
+}
+@media (width<=380px) {
+    .contact-heading h1{
+        font-size: 2.2rem
+    }
+    .contact-heading a{
+        font-size: 1.2rem;
+    }
+}
+@media (width<=290px) {
+    .contact-heading h1,
+    .contact-heading h2{
+        font-size: 1.2rem;
+    }
+    .contact-heading a{
+        font-size: 0.7rem;
+    }
+}
+
+
+/* form */
+
+.form-container{
+    display: flex;
+    width: 80%;
+    margin: 1rem auto;
+    border-radius: 20px;
+}
+.form-img{
+    background-color: white;
+    width: 30%;
+    padding: 1rem;
+    display: grid;
+    place-content: center;
+    border-radius:  40px 0 0 40px ;
+}
+.form-img img{
+    width: 150px;
+}
+.form-text{
+    width: 70%;
+    padding: 1rem;
+    border-radius: 0 40px  40px 0;
+}
+.form-container input,
+.form-container textarea{
+    border-radius: 20px;
+    font-size: 1.3rem;
+    color: var(--green);
+    width: 90%;
+    margin: auto;
+    border: 0;
+    outline: 0;
+    padding: 0.4rem 0.8rem;
+}
+input::placeholder,
+textarea::placeholder{
+    color: var(--gray);
+}
+.form-btn-div{
+    width: 100%;
+    text-align: center;
+}
+.form-container button{
+    border-radius: 20px;
+    font-size: 1.5rem;
+    width: 200px;
+    margin: 1rem auto;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    padding: 0.4rem 0.8rem;
+}
+.form-container button:hover{
+    border-radius: 15px;
+    transition: all 0.5s ease-in-out;
+    color: white;
+    scale: 1.1;
+}
+
+@media (width<=650px) {
+    .form-img{
+        display: none;
+    }
+    .form-text{
+        border-radius: 40px;
+        width: 100%;
+    }
+}
+@media (width<=500px) {
+    .form-container{
+        width: 100%;
+    }
+}

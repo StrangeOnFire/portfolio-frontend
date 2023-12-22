@@ -1,0 +1,47 @@
+.HowIdoIt{
+    min-height: 100vh;
+    margin-top: 150vh;
+    text-align: center;
+    padding: 1rem;
+}
+.HowIdoIt h1{
+    font-size: 3rem;
+}
+.HowIdoIt img{
+    width: 60%;
+}
+.howIdoIt-svg{
+    width: 40%;
+}
+.mobileVersion{
+    display: none;
+}
+@media (width<=900px) {
+    .pcVersion{
+        display: none;
+    }
+    .mobileVersion{
+        display: block;
+    }
+    .HowIdoIt img{
+        display: block;
+        width: 70%;
+        margin: auto;
+    }
+    .howIdoIt-svg{
+        width: 80%;
+        margin: auto;
+    }
+}
+@media (width<=450px) {
+    .HowIdoIt h1{
+        font-size: 2.3rem;
+    }
+    .HowIdoIt img{
+        width: 80%;
+    }
+    .howIdoIt-svg{
+        width: 100%;
+        margin: auto;
+    }
+}

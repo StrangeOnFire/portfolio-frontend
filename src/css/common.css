@@ -1,0 +1,45 @@
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Rubik+Mono+One&display=swap');
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  background-color: var(--gray);
+}
+:root {
+  --gray: #dadfe5;
+  --green: #345b48;
+  --yellow: #e6f75f;
+}
+@font-face {
+  font-family: myFirstFont;
+  src: url('../assets/Oldschool\ Grotesk\ ExtraBold.otf');
+  font-weight: bold;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.bold {
+  font-family: myFirstFont, sans-serif;
+}
+.green {
+  color: var(--green);
+}
+.gray {
+  color: var(--gray);
+}
+.bg-green {
+  background-color: var(--green);
+}
+.bg-gray {
+  background-color: var(--gray);
+}
+.yellow{
+  color: var(--yellow);
+}
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
+
+
+

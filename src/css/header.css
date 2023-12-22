@@ -1,0 +1,91 @@
+.header {
+  background-color: var(--gray);
+  height: 200vh;
+}
+.header-keepScrolling {
+  position: sticky;
+  top: 90vh;
+  text-align: center;
+}
+/* top container  */
+.header-topContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  position: sticky;
+  top: 1rem;
+}
+.header-topContainer img {
+  width: 4rem;
+}
+
+/* middle container */
+.header-eyeContainer {
+  position: sticky;
+  text-align: center;
+  top: 20vh;
+  transform-origin: center;
+  background-color: white;
+  max-width: 500px;
+  border-radius: 50%;
+  margin-inline: auto;
+}
+
+.header-middleContainer {
+  position: sticky;
+  text-align: center;
+  top: 60vh;
+  font-weight: 800;
+  transition: all 0.4s ease-in-out;
+  margin-inline: 1rem;
+}
+
+.header-middleContainer h1 {
+  font-size: 2.5rem;
+}
+
+/* media screen width */
+@media (width<=532px) {
+  .header-topContainer img {
+    width: 3rem;
+  }
+  .header-eyeContainer{
+    margin-inline: 1rem;
+  }
+  .header-middleContainer {
+    top: 50vh;
+  }
+  .header-keepScrolling {
+    top: 85vh;
+  }
+}
+@media (width<=370px) {
+
+  .header-middleContainer h1 {
+    font-size: 2rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* keepScrollingIcon */
+.keepScrollingIcon{
+  animation:  downArrow 1s infinite ease-in-out;
+}
+@keyframes downArrow {
+  0%{
+    transform:translateY(-10%) ;
+  }
+  100%{
+    transform:translateY(40%) ;
+  }
+}

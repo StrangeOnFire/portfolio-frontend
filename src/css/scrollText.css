@@ -1,0 +1,57 @@
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar {
+  height: 0px;
+  width: 0px;
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+  background: var(--background);
+}
+
+html {
+  scroll-snap-type: y mandatory;
+}
+
+.section {
+  padding-top: 1%;
+  padding-bottom: 1%;
+  position: relative;
+  overflow: hidden;
+
+}
+.section span{
+  letter-spacing: .1rem;
+}
+
+.parallax {
+  overflow: hidden;
+  letter-spacing: -2px;
+  margin: 0;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.parallax .scroller {
+  font-weight: 600;
+  font-size: 5rem;
+  display: flex;
+  white-space: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
+  color: var(--gray);
+}
+
+.parallax span {
+  display: block;
+  margin-right: 20px;
+}

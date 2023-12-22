@@ -1,0 +1,42 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  place-content: center;
+  height: 80vh;
+  padding: 2rem 0.3rem;
+}
+.footer-eye-div {
+  width: 100%;
+  max-width: 500px;
+  background-color: white;
+  border-radius: 50%;
+  margin: auto;
+  text-align: center;
+  overflow: hidden;
+}
+.footer-eye {
+  width: 255px;
+  margin: auto;
+  transform: translateY(5%);
+  text-align: center;
+}
+.footer-eye path {
+  margin: auto;
+  width: 100%;
+}
+.footer-text {
+  margin-top: 2rem;
+}
+.footer-text h1 {
+  font-size: 4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+.copyright {
+  color: white;
+}
+@media (width<=500px) {
+  .footer-text h1 {
+    font-size: 2rem;
+  }
+}
