@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import "../css/footer.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { interpolate } from "flubber";
+import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+// -------------------------------------------------------
 export default function Footer() {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
@@ -17,10 +19,21 @@ export default function Footer() {
   const path = useTransform(scrollYProgress, [0.5, 1], [path1, path2], {
     mixer: (a, b) => interpolate(a, b),
   });
+  const scale = useTransform(scrollYProgress, [0.7, 1], [0.8, 1]);
   return (
     <>
     <motion.div ref={ref} className="footer">
-      
+      <div className="footer-icons ">
+        <a href="">
+        <h1>Github <OpenInNewIcon /></h1>
+        </a>
+        <a href="">
+        <h1>LinkedIn <OpenInNewIcon  /></h1>
+        </a>
+        <a href="">
+        <h1>Resume <OpenInNewIcon  /></h1>
+        </a>
+      </div>
       <div className="footer-eye-div">
         <motion.svg
           className="footer-eye"
@@ -30,10 +43,10 @@ export default function Footer() {
           <motion.path d={path} fill="var(--green)" />
         </motion.svg>
       </div>
-      <div className="bold green footer-text">
+      <motion.div className="bold green footer-text" style={{scale}}>
         <h1>WITH LOVE,</h1>
         <h1>FROM INDIA</h1>
-      </div>
+      </motion.div>
     </motion.div>
       <h2 className="copyright">©2023,Ayush Kumar</h2>
       </>

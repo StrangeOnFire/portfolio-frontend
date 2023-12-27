@@ -28,6 +28,13 @@ export default function Skills() {
     "TAILWIND.CSS",
     "SOCKET.IO",
   ]);
+  const [thirdSkills, setThirdSkills] = useState([
+    "REDUX_TOOLKIT",
+    "REACT.JS",
+    "EXPRESS.JS",
+    "FRAMER-MOTION",
+    "TAILWIND.CSS",
+  ]);
 
   return (
     <>
@@ -55,6 +62,16 @@ export default function Skills() {
 
             <div className="skills-card-container">
               {secondSkills.map((element, idx) => {
+                return (
+                  <div className="bg-gray skills-card" key={idx}>
+                    <h2 className="bold green">{element}</h2>
+                  </div>
+                );
+              })}
+            </div>
+
+            <div className="skills-card-container">
+              {thirdSkills.map((element, idx) => {
                 return (
                   <div className="bg-gray skills-card" key={idx}>
                     <h2 className="bold green">{element}</h2>

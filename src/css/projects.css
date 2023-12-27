@@ -6,15 +6,30 @@
         font-size: 9rem;
         text-align: center;
 }
+.projects h1 img{
+        width: 7.5rem;
+        animation: rotateImg 5s infinite linear;
+}
+@keyframes rotateImg {
+  100%{
+    rotate: 360deg;
+  }
+}
 @media (max-width: 950px) { 
    .projects h1{
     font-size: 7rem;
    }  
+   .projects h1 img{
+    width: 5.5rem;
+}
  }
 @media (max-width: 720px) { 
    .projects h1{
     font-size: 5rem;
    }  
+   .projects h1 img{
+    width: 4rem;
+}
  }
 
 

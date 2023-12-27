@@ -1,10 +1,10 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import "../css/blackInfoContainer.css";
 import creativeIcon from "../assets/creative-icon.svg";
-import optimisedForMobileImg from "../assets/mobile-seo-removebg-.png";
 import modernUImg from "../assets/modernUI.svg";
-import ayushKumarImg from '../assets/ayush-kumar.svg';
+import ayushKumarImg from "../assets/ayush-kumar.svg";
+import "../css/blackInfoContainer.css";
+
 //------------------------------------------------------
 export default function BlackInfoContainer() {
   const ref = useRef();
@@ -14,10 +14,11 @@ export default function BlackInfoContainer() {
   });
   const scale = useTransform(
     scrollYProgress,
-    [0, 0.275, 0.6, 1],
+    [0, 0.225, 0.6, 1],
     [0.8, 1, 1, 0.8]
   );
   const y = useTransform(scrollYProgress, [0, 0.3], ["0%", "-30%"]);
+
   return (
     <>
       <motion.div
@@ -81,14 +82,14 @@ export default function BlackInfoContainer() {
 
         {/* ayush kumar mobile version */}
         <div className="BlackInfoContainer-mobile ">
-          <img src={ayushKumarImg} alt="ayush kumar  mobile version"/>
+          <img src={ayushKumarImg} alt="ayush kumar  mobile version" />
         </div>
-         {/* border bottom line */}
-         <motion.div
-            initial={{ scale: 0 }}
-            whileInView={{ scale: 1 }}
-            className="bottom-border bg-gray BlackInfoContainer-mobile "
-          ></motion.div>
+        {/* border bottom line */}
+        <motion.div
+          initial={{ scale: 0 }}
+          whileInView={{ scale: 1 }}
+          className="bottom-border bg-gray BlackInfoContainer-mobile "
+        ></motion.div>
 
         {/*creative-profession-container section  */}
         <div className="creative-profession-container">
@@ -108,16 +109,11 @@ export default function BlackInfoContainer() {
           </div>
         </div>
 
-        {/*optimisedForMobile section  */}
-        <motion.div className="optimisedForMobile">
-          <h2 className=""></h2>
-          {/* <img src={optimisedForMobileImg} alt="optimisedForMobileimg"/> */}
-        </motion.div>
-
+        {/* attractive-and-modernUI-container */}
         <div className="attractive-and-modernUI-container">
           <div className="bg-yellow green attractive bold">
             <motion.h3 initial={{ x: "10%" }} whileInView={{ x: 0 }}>
-              - ATTRACTIVE
+              - Attractive
             </motion.h3>
             <motion.h3 initial={{ x: "20%" }} whileInView={{ x: 0 }}>
               - Dynamic
@@ -126,7 +122,7 @@ export default function BlackInfoContainer() {
               - Client success
             </motion.h3>
             <motion.h3 initial={{ x: "40%" }} whileInView={{ x: 0 }}>
-              - Organized
+              - Optimised
             </motion.h3>
           </div>
 

@@ -1,10 +1,11 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import "../css/header.css";
 import logo from "../assets/logo.png";
+import ayushKumarImg from "../assets/AYUSH KUMAR mainHeading.svg";
 import eyeBall from "../assets/eyeBall.png";
 import { getClockTime } from "../functions/getClockTime";
 import SouthIcon from "@mui/icons-material/South";
+import "../css/header.css";
 
 // ---------------------------------------------------------
 export default function Header() {
@@ -45,8 +46,12 @@ export default function Header() {
         text1Scale={text1Scale}
         text2Scale={text2Scale}
       />
-      <motion.h2 className="header-keepScrolling green " style={{opacity:keepScrolling}}>
-        Keep scrolling <SouthIcon fontSize="small" className="keepScrollingIcon"/>
+      <motion.h2
+        className="header-keepScrolling green "
+        style={{ opacity: keepScrolling }}
+      >
+        Keep scrolling{" "}
+        <SouthIcon fontSize="small" className="keepScrollingIcon" />
       </motion.h2>
     </motion.div>
   );
@@ -77,14 +82,11 @@ const MiddleContainer = ({
   text1,
   text2,
   text1Scale,
-  text2Scale
+  text2Scale,
 }) => {
   return (
     <>
-      <motion.div
-        className="header-eyeContainer"
-        style={{ height: eyeHeight }}
-      >
+      <motion.div className="header-eyeContainer" style={{ height: eyeHeight }}>
         <motion.img
           src={eyeBall}
           style={{
@@ -99,7 +101,7 @@ const MiddleContainer = ({
 
       <motion.div
         className="header-middleContainer green"
-        style={{ opacity: text1,scale:text1Scale }}
+        style={{ opacity: text1, scale: text1Scale }}
       >
         <h3>
           A{" "}
@@ -109,11 +111,17 @@ const MiddleContainer = ({
           </span>{" "}
           Web Alchemist blending digital brilliance with code mastery{" :)"}
         </h3>
-        <h1 className="bold">AYUSH KUMAR</h1>
+
+        <div className="ayushKumarImg">
+          <img src={ayushKumarImg} alt="heading" />
+        </div>
       </motion.div>
 
-      <motion.div style={{ opacity: text2,scale:text2Scale }} className="header-middleContainer green">
-        <h3 style={{fontSize:'1.7rem'}}>
+      <motion.div
+        style={{ opacity: text2, scale: text2Scale }}
+        className="header-middleContainer green"
+      >
+        <h3 style={{ fontSize: "1.7rem" }}>
           As you Explore my Portfolio, witness the fusion of creativity and
           technology!
         </h3>

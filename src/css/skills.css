@@ -42,6 +42,9 @@
 .skills-card-container:nth-of-type(3){
     margin-left: 8rem;
 }
+.skills-card-container:nth-of-type(4){
+    margin-left: 16rem;
+}
 .skills-card{
     padding-left: 1rem ;
     padding-right: 5rem;

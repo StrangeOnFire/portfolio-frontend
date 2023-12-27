@@ -15,7 +15,7 @@ export default function HowIdoIt() {
     <>
       <div ref={ref} className="HowIdoIt green bg-gray">
         <motion.h2 style={{opacity:h2Opacity,scale:h2Scale,y:h2Y}}>Maybe you're wondering</motion.h2>
-        <h1 className="bold">HOW DO I DO IT?</h1>
+        <h1 className="bold">HOW DO I DO IT ?</h1>
         <img src={HowIdoItImg} alt="how i do it img" />
         <svg
           className="howIdoIt-svg pcVersion"
