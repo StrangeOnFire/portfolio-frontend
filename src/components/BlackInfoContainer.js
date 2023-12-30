@@ -80,7 +80,7 @@ export default function BlackInfoContainer() {
           </svg>
         </div>
 
-        {/* ayush kumar mobile version */}
+        {/* ayush kumar section @mobile-version */}
         <div className="BlackInfoContainer-mobile ">
           <img src={ayushKumarImg} alt="ayush kumar  mobile version" />
         </div>

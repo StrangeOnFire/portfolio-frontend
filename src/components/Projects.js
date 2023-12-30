@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import furnigoodsImg from "../assets/Screenshot 2023-12-10 100420.png";
 import yoganationImg from "../assets/yoganation.png";
 import grocerifyImg from "../assets/grocerify.png";
-import donutImg from '../assets/donut-min.png'
+import donutImg from "../assets/donut-min.png";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -12,21 +12,17 @@ import ScrollText from "./ScrollText";
 
 // ------------------------------------------------
 export default function Projects() {
-  // const ref = useRef();
-  // const { scrollYProgress } = useScroll({
-  //   target: ref,
-  //   offset: ["0.25 1", "1 1"],
-  // });
-
-  // const x = useTransform(scrollYProgress, [0.25, 1], ["0px", "-2100px"]);
+  
   return (
     <>
       <div className="projects ">
         <div className="project-pcVersion">
           <div className="projects-heading">
-            <h1 className="bold gray">PR
-            <img src={donutImg} alt="donut img"/>
-            JECTS</h1>
+            <h1 className="bold gray">
+              PR
+              <img src={donutImg} alt="donut img" />
+              JECTS
+            </h1>
           </div>
 
           <ProjectPcVersion />

@@ -3,6 +3,9 @@
     margin-top: 150vh;
     text-align: center;
     padding: 1rem;
+    @media (width>=1050px) {
+        margin-top: 120vh;
+    }
 }
 .HowIdoIt h1{
     font-size: 3rem;

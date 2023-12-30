@@ -8,7 +8,7 @@ export default function Skills() {
     target: ref,
     offset: ["0.25 1", "1 1"],
   });
-
+  
   //note-the -2100px should be dynamically changable so have to edit the code later on
 
   const x = useTransform(scrollYProgress, [0.25, 1], ["0px", "-2100px"]);
