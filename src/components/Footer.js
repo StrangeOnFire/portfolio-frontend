@@ -24,10 +24,10 @@ export default function Footer() {
     <>
     <motion.div ref={ref} className="footer">
       <div className="footer-icons ">
-        <a href="">
+        <a href="https://github.com/StrangeOnFire" target="_blank">
         <h1>Github <OpenInNewIcon /></h1>
         </a>
-        <a href="">
+        <a href="https://www.linkedin.com/in/ayush-kumar-a90999285" target="_blank">
         <h1>LinkedIn <OpenInNewIcon  /></h1>
         </a>
         <a href="">
