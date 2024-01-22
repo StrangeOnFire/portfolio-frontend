@@ -1,7 +1,7 @@
 .BlackInfoContainer {
   background-color: black;
   position: absolute;
-  z-index: 9999;
+  z-index: 9998;
   width: 100%;
   box-shadow: 0 0 10px gray;
 }

@@ -3,13 +3,13 @@ import "./App.css";
 import Lenis from "@studio-freight/lenis";
 import Header from "./components/Header";
 import BlackInfoContainer from "./components/BlackInfoContainer";
-import Experiment from "./components/Experiment";
 import HowIdoIt from "./components/HowIdoIt";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+// --------------------------------
 function App() {
   const lenis = new Lenis();
 
@@ -26,14 +26,13 @@ function App() {
   return (
     <>
       <Header />
+     
       <BlackInfoContainer />
       <HowIdoIt />
       <Skills />
       <Projects />
       <Contact />
       <Footer />
-
-      {/* <Experiment /> */}
     </>
   );
 }

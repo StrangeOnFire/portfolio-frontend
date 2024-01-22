@@ -1,7 +1,4 @@
-import React, { useRef, useState } from "react";
-import furnigoodsImg from "../assets/Screenshot 2023-12-10 100420.png";
-import yoganationImg from "../assets/yoganation.png";
-import grocerifyImg from "../assets/grocerify.png";
+import React, { useEffect, useRef, useState } from "react";
 import donutImg from "../assets/donut-min.png";
 import { useMotionValue, motion, useSpring, useTransform } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
@@ -9,34 +6,52 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "../css/projects.css";
 import ScrollText from "./ScrollText";
-
+import axios from "axios";
 // ------------------------------------------------
 export default function Projects() {
-  
+  const [projects, setProjects] = useState({});
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_LINK}/projects/`)
+      .then((response) => {
+        setProjects(response.data);
+        setLoading(false);
+      })
+      .catch((err) =>
+        console.log(
+          "some error happened while connecting to backend in projects section" +
+            err
+        )
+      );
+  }, []);
   return (
     <>
-      <div className="projects ">
-        <div className="project-pcVersion">
-          <div className="projects-heading">
-            <h1 className="bold gray">
-              PR
-              <img src={donutImg} alt="donut img" />
-              JECTS
-            </h1>
+      {!loading && (
+        <div className="projects ">
+          <div className="project-pcVersion">
+            <div className="projects-heading">
+              <h1 className="bold gray">
+                PR
+                <img src={donutImg} alt="donut img" />
+                JECTS
+              </h1>
+            </div>
+
+            <ProjectPcVersion projects={projects} />
           </div>
 
-          <ProjectPcVersion />
+          <div className="project-mobileVersion">
+            <ProjectMobileVersion projects={projects} />
+          </div>
         </div>
-
-        <div className="project-mobileVersion">
-          <ProjectMobileVersion />
-        </div>
-      </div>
+      )}
     </>
   );
 }
-
-const ProjectMobileVersion = () => {
+// ----------------------------------------------------------
+const ProjectMobileVersion = ({ projects }) => {
   return (
     <div className="project-mobileVersion">
       <ScrollText />
@@ -47,81 +62,46 @@ const ProjectMobileVersion = () => {
         loop={true}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="project-card-mobile">
-            <img src={furnigoodsImg} alt="" />
-            <h3 className="green">Furnigoods</h3>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="project-card-mobile">
-            <img src={yoganationImg} alt="" />
-            <h3 className="green">Yoganation</h3>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="project-card-mobile">
-            <img src={grocerifyImg} alt="" />
-            <h3 className="green">Grocerify</h3>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="project-card-mobile">
-            <img src={furnigoodsImg} alt="" />
-            <h3 className="green">Furnigoods</h3>
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div className="project-card-mobile">
-            <img src={furnigoodsImg} alt="" />
-            <h3 className="green">Furnigoods</h3>
-          </div>
-        </SwiperSlide>
+        {projects.project.map((item, idx) => {
+          return (
+            <SwiperSlide key={idx}>
+              <div className="project-card-mobile">
+                <img src={item.imageLink} alt="" />
+                <a href={item.link} target="_blank">
+                  <h3 className="green">{item.heading}</h3>
+                </a>
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </div>
   );
 };
 
-const ProjectPcVersion = () => {
+// ----------------------------------------------------------
+const ProjectPcVersion = ({ projects }) => {
   return (
     <section className="project-container-pc ">
       <div className="project-showcase-pc mx-auto max-w-5xl">
-        <Link
-          heading="Furnigoods"
-          subheading="Lorem pixum fnvfuvnfvfuvb dwvnfuvbfnvewv"
-          imgSrc={furnigoodsImg}
-          href="#"
-        />
-        <Link
-          heading="Yoganation"
-          subheading="Lorem pixum fnvfuvnfvfuvb dwvnfuvbfnvewv"
-          imgSrc={yoganationImg}
-          href="#"
-        />
-        <Link
-          heading="Grocerify"
-          subheading="Lorem pixum fnvfuvnfvfuvb dwvnfuvbfnvewv"
-          imgSrc={grocerifyImg}
-          href="#"
-        />
-        <Link
-          heading="Careers"
-          subheading="Lorem pixum fnvfuvnfvfuvb dwvnfuvbfnvewv"
-          imgSrc="/imgs/random/5.jpg"
-          href="#"
-        />
-        <Link
-          heading="Fun"
-          subheading="Incase you're bored"
-          imgSrc="/imgs/random/10.jpg"
-          href="#"
-        />
+        {projects.project.map((item, idx) => {
+          return (
+            <ProjectCardPC
+              heading={item.heading}
+              subheading={item.subHeading}
+              imgSrc={item.imageLink}
+              href={item.link}
+              key={idx}
+            />
+          );
+        })}
       </div>
     </section>
   );
 };
 
-const Link = ({ heading, imgSrc, subheading, href }) => {
+// ----------------------------------------------------------
+const ProjectCardPC = ({ heading, imgSrc, subheading, href }) => {
   const ref = useRef(null);
 
   const x = useMotionValue(0);
@@ -153,6 +133,7 @@ const Link = ({ heading, imgSrc, subheading, href }) => {
     <motion.a
       href={href}
       ref={ref}
+      target="_blank"
       onMouseMove={handleMouseMove}
       initial="initial"
       whileHover="whileHover"

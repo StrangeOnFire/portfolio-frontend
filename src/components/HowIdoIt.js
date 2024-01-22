@@ -2,6 +2,8 @@ import React, { useRef } from "react";
 import HowIdoItImg from "../assets/howIdoIt.png";
 import "../css/howIdoIt.css";
 import { motion, useScroll, useTransform } from "framer-motion";
+
+// ------------------------------------------------------
 export default function HowIdoIt() {
   const ref = useRef();
   const { scrollYProgress } = useScroll({
@@ -11,6 +13,7 @@ export default function HowIdoIt() {
   const h2Opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
   const h2Scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
   const h2Y = useTransform(scrollYProgress, [0, 1], ['-140%', '0%']);
+  
   return (
     <>
       <div ref={ref} className="HowIdoIt green bg-gray">

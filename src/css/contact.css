@@ -123,12 +123,22 @@ textarea::placeholder{
     color: white;
     scale: 1.1;
 }
-
+/* this div occur when the contact form is submitted */
+.contactMessage-sent{
+    width: 70%;
+    height: 522px;
+    padding:  1rem;
+    border-radius: 0 40px  40px 0;
+    font-size: 2rem;
+    display: grid;
+    place-content: center;
+}
 @media (width<=650px) {
     .form-img{
         display: none;
     }
-    .form-text{
+    .form-text,
+    .contactMessage-sent{
         border-radius: 40px;
         width: 100%;
     }
@@ -138,3 +148,4 @@ textarea::placeholder{
         width: 100%;
     }
 }
+

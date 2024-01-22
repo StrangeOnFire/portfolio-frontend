@@ -1,8 +1,9 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../css/footer.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { interpolate } from "flubber";
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
+import axios from "axios";
 // -------------------------------------------------------
 export default function Footer() {
   const ref = useRef();
@@ -20,17 +21,32 @@ export default function Footer() {
     mixer: (a, b) => interpolate(a, b),
   });
   const scale = useTransform(scrollYProgress, [0.7, 1], [0.8, 1]);
+   const [links, setLinks] = useState({});
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVER_LINK}/links/`)
+      .then((response) => {
+        setLinks(response.data);
+      })
+      .catch((err) =>
+        console.log(
+          "some error happened while connecting to backend in links section" +
+            err
+        )
+      );
+  }, []);
+  
   return (
     <>
     <motion.div ref={ref} className="footer">
       <div className="footer-icons ">
-        <a href="https://github.com/StrangeOnFire" target="_blank">
+        <a href={links.github} target="_blank">
         <h1>Github <OpenInNewIcon /></h1>
         </a>
-        <a href="https://www.linkedin.com/in/ayush-kumar-a90999285" target="_blank">
+        <a href={links.linkedin} target="_blank">
         <h1>LinkedIn <OpenInNewIcon  /></h1>
         </a>
-        <a href="">
+        <a href={links.resume}>
         <h1>Resume <OpenInNewIcon  /></h1>
         </a>
       </div>
@@ -48,7 +64,7 @@ export default function Footer() {
         <h1>FROM INDIA</h1>
       </motion.div>
     </motion.div>
-      <h2 className="copyright">©2023,Ayush Kumar</h2>
+      <h2 className="copyright">©2024,Ayush Kumar</h2>
       </>
   );
 }

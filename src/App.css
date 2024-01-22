@@ -1,0 +1,25 @@
+.rotating-fixedIcon {
+  position: fixed;
+  bottom: 5%;
+  right: 5%;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  @media (width<=1000px) {
+    display: none;
+  }
+}
+.rotating-fixedIcon:hover{
+    scale: 1.1;
+}
+.rotating-fixedIcon img:nth-of-type(1) {
+  width: 8.5rem;
+  height: 8.5rem;
+  animation: rotateImg 5s infinite linear;
+}
+.rotating-fixedIcon img:nth-of-type(2) {
+  position: absolute;
+  left: 36%;
+  top: 32%;
+  width: 2.5rem;
+  height: 2.5rem;
+}

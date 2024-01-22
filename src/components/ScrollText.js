@@ -10,7 +10,7 @@ import {
   useAnimationFrame,
 } from "framer-motion";
 import { wrap } from "@motionone/utils";
-
+// ----------------------------------------------------
 function ParallaxText({ children, baseVelocity = 100 }) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();

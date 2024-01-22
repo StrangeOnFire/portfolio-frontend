@@ -6,7 +6,8 @@ import eyeBall from "../assets/eyeBall.png";
 import { getClockTime } from "../functions/getClockTime";
 import SouthIcon from "@mui/icons-material/South";
 import "../css/header.css";
-
+import sunImg from "../assets/vector sun.png";
+import manImg from "../assets/Man-05-removebg-preview.png";
 // ---------------------------------------------------------
 export default function Header() {
   const ref = useRef();
@@ -53,6 +54,12 @@ export default function Header() {
         Keep scrolling{" "}
         <SouthIcon fontSize="small" className="keepScrollingIcon" />
       </motion.h2>
+      <motion.div className="rotating-fixedIcon" style={{ opacity: keepScrolling }}>
+        <a href="#contact">
+        <img src={sunImg} alt="sun icon" />
+        <img src={manImg} alt="man icon" />
+        </a>
+      </motion.div>
     </motion.div>
   );
 }
